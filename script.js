@@ -47,3 +47,20 @@ switch (playRound(getComputerChoice(),selection)){
     case 2 : console.log("You win");
     break
 }
+
+function game(){
+    let computerScore = 0;
+    let playerScore = 0;
+    for (let i = 0; i < 5; i++){
+        let roundResult = playRound(getComputerChoice(), selection);
+        if  (roundResult === 1){
+            computerScore++;
+        }else if (roundResult === 2){
+            playerScore++;
+        }
+    }
+    
+    return (`Player - ${playerScore} : ${computerScore} - Computer`)
+}
+
+console.log(game());

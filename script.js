@@ -9,9 +9,6 @@ function getComputerChoice(){
 
 
 
-
-const selection = "Rock"
-
 function playRound(computerChoice, playerChoice){
     
     console.log(computerChoice);
@@ -39,19 +36,15 @@ function playRound(computerChoice, playerChoice){
     }
 }
 
-switch (playRound(getComputerChoice(),selection)){
-    case 0 : console.log("A Draw");
-    break
-    case 1 : console.log("You Lose");
-    break
-    case 2 : console.log("You win");
-    break
-}
 
 function game(){
     let computerScore = 0;
     let playerScore = 0;
     for (let i = 0; i < 5; i++){
+        let selection = null
+        while (!(selection === "rock" || selection === "paper" || selection === "scissors")){
+            selection = prompt("Please choose Rock, Paper or Scissors").toLowerCase();
+        }
         let roundResult = playRound(getComputerChoice(), selection);
         if  (roundResult === 1){
             computerScore++;
